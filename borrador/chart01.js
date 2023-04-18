@@ -9,9 +9,15 @@ d3.json('https://cdn.jsdelivr.net/npm/d3-time-format@3/locale/es-ES.json').then(
     let chart = Plot.plot({
       marks: [
         Plot.line(data, 
-          Plot.groupX({ y:"count" }, { x: "hora_ingreso_aux"})
-        ),
-          
+          Plot.groupX({ 
+            y:"count" }, 
+          { 
+            x: "hora_ingreso_aux", //"fecha_ingreso"
+            stroke: "red",
+            strokeWidth: 3,
+            opacity: 0.5,
+            curve: 'natural',
+        }) ),
         ],
         x: {
           label: null,
